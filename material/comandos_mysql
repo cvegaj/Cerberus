@@ -1,0 +1,10 @@
+SHOW DATABASE ---------------------lista las bases de datos
+CREATE DATABASE dataBaseName ------crea
+USE dataBaseName ------------------accede
+SHOW TABLE ------------------------muestra las tablas
+CREATE TABLE tableName(columName1 CHARTYPE,
+                       columnName2 CHARTYPE);
+DESCRIBE tableName ----------------muestra interior de la tabla
+INSERT INTO tableName
+-> VALUES('atribute1','atribute2',..);
+SELECT * FROM tableName
