@@ -1,0 +1,77 @@
+\documentclass[11pt]{article} %inicia el documento con una determinada clase
+\usepackage{graphicx} %permite incluir imágenes
+\usepackage[utf8]{inputenc} %permite utilizar caracteres extras
+\usepackage[spanish]{babel} %modifica en lenguage del documento
+\usepackage[vmargin=4cm,tmargin=3cm,hmargin=2cm,letterpaper]{geometry} %modifica lor margenes
+\setlength{\parindent}{0pt} %permite modificar la indentanción
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5mm} %le da un grozor a la linea del encabezado
+\pagenumbering{gobble} %quita la numeración de página
+\graphicspath{{images/}}
+\usepackage{framed,color}
+\definecolor{shadecolor}{rgb}{1,0.8,0.3}
+
+\begin{document}
+\fancyhead[L]{\includegraphics[scale=0.15]{ucr}}
+\fancyhead[C]{UNIVERSIDAD DE COSTA RICA\\ESCUELA DE INGENIERÍA ELECTRICA\\PROGRAMACIÓN BAJO PLATAFORMAS ABIERTAS\\PROYECTO DE DESARROLLO - BOLETIN.01}
+\fancyhead[R]{\includegraphics[scale=0.4]{eie}}
+\pagestyle{fancy}
+\setlength{\headheight}{30pt}
+\rule{\linewidth}{0.2mm}
+\vspace{10pt}
+
+Bueno creo que ya hay que comenzar a producir algo. Espero que todos ya esten masomenos en papados de mysql.\\
+
+Ya hablé con el profesor Lochi y me dio la base de datos. Es un toq grande y algunas cosas estan desacomodadas. Por mientras les voy a pasar una tabla con 10 estudiantes para ir haciendo pruebas (está adjunto al correo)\\
+
+División del proyecto:
+\begin{itemize}
+\item tener la tabla bien hecha en mysql
+\item crear las funciones del programa (los filtros, que saque el promerio, que diga quienes se quedaron, etc...) recomiendo en php, para esto sería bueno dos personas que este full en eso, entre mas ideas de filtras cosas genial
+\item es problable que el resultado se va a escribir en la consola, por lo que es importante ver como extraer esos datos y ponerlos en un .txt o .tex (mejor) y así hacer un reporte en latex
+\item ya con eso tenemos el programa, pero sería un toq feo para un usuario usarlo, por lo que si da tiempo hacer un interfaz mas bonita mejor (creo que eso qdará como propuesta para el segundo proyecto igual)
+\end{itemize}
+Vea que no he puesto nombre, espero que uds agarren el q más les guste y empezo a trabajar, si es el de hacer funciones le diga a otro miembro y así trabajar en conjunto.\\
+
+Ok, para los que aun no han hecho la tabla y eso doy los pasos siguientes para agilizar la cosa:\\
+
+Primero instalar:
+ 
+\begin{shaded}
+sudo apt-get install mysql-server\\
+sudo apt-get install mysql-client
+\end{shaded}
+
+importante que el server será local por lo que todos tenemo que hacer las tablas en cada compu, ya teniendo instalado el programa digitamos:
+\begin{shaded}
+mysql -u root -p\\
+\end{shaded}
+y ponemos el password de cuando instalamos mysql-server, ahora que ya tenemos todos lo privilegios y estando en el bash de myqls, iniciamos creando la base de datos y la tabla respectiva
+\begin{shaded}
+CREATE DATABASE dataBaseName\\
+USE dataBaseName\\
+\end{shaded}
+crear la tabla
+\begin{shaded}
+CREATE TABLE tableName (\\
+	id INT,\\
+	Recinto INT,\\ 
+	Año INT,\\ 
+	Periodo INT,\\ 
+	Grupo INT,\\ 
+	Sigla VARCHAR(6),\\ 
+	Nota VARCHAR(3)\\
+	);
+\end{shaded}
+es hora de importar la tabla (note que PATH hay q cambiarlo)
+\begin{shaded}
+LOAD DATA INFILE 'PATH/tabladeprueba.csv' replace INTO TABLE tableName FIELDS TERMINATED BY ';' LINES TERMINATED BY '\textbackslash n';
+\end{shaded}
+y para ver que todo esta bien, mostramos la tabla
+\begin{shaded}
+SELECT * FROM tableName
+\end{shaded}
+
+	
+\end{document}

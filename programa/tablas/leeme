@@ -2,7 +2,7 @@
 FIELDS TERMINATED BY '<tab>'
 LINES TERMINATES BY '\n'
 ====================================================
-NOMBRE	RECINTO	ANO	PERIODO	GRUPO	SIGLA	NOTA
+ID	RECINTO	ANO	PERIODO	GRUPO	SIGLA	NOTA
 ====================================================
 
 

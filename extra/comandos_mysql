@@ -1,0 +1,35 @@
+mysql -u root -p ## para que les dejen hacer lo que sea
+
+SHOW DATABASES ---------------------lista las bases de datos
+CREATE DATABASE dataBaseName ------crea
+USE dataBaseName ------------------accede
+SHOW TABLES ------------------------muestra las tablas
+CREATE TABLE tableName(columName1 CHARTYPE,
+                       columnName2 CHARTYPE);
+DESCRIBE tableName ----------------muestra la descripcion de la tabla
+INSERT INTO tableName
+-> VALUES('atribute1','atribute2',..);
+SELECT * FROM tableName -----------muestra la tabla
+SELECT * FROM tableName INTO OUTFILE 'PATH/file.csv'
+
+===============================================================
+Si quieren crear la tabla rapidamente compien eso:
+
+CREATE TABLE tableName (
+	id INT,
+	Recinto INT, 
+	Año INT, 
+	Periodo INT, 
+	Grupo INT, 
+	Sigla VARCHAR(6), 
+	Nota VARCHAR(3)
+	);
+===============================================================
+Si quieren importar la tabla
+
+LOAD DATA INFILE 'PATH/tabladeprueba.csv' replace INTO TABLE tableName FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n';
+===============================================================
+Si quieren no usar root, y usar el usuario de uds pongan
+
+GRANT ALL on dataBaseName.* TO user_name@localhost
+IDENTIFIED BY 'root_password';
