@@ -1,0 +1,8 @@
+"tabladeprueba.csv" se lee de la siguiente manera:
+FIELDS TERMINATED BY '<tab>'
+LINES TERMINATES BY '\n'
+====================================================
+NOMBRE	RECINTO	ANO	PERIODO	GRUPO	SIGLA	NOTA
+====================================================
+
+
