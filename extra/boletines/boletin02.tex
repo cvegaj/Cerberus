@@ -1,0 +1,67 @@
+\documentclass[11pt]{article} %inicia el documento con una determinada clase
+\usepackage{graphicx} %permite incluir imágenes
+\usepackage[utf8]{inputenc} %permite utilizar caracteres extras
+\usepackage[spanish]{babel} %modifica en lenguage del documento
+\usepackage[vmargin=4cm,tmargin=3cm,hmargin=2cm,letterpaper]{geometry} %modifica lor margenes
+\setlength{\parindent}{0pt} %permite modificar la indentanción
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5mm} %le da un grozor a la linea del encabezado
+\pagenumbering{gobble} %quita la numeración de página
+\graphicspath{{images/}}
+\usepackage{framed,color}
+\definecolor{shadecolor}{rgb}{1,0.8,0.3}
+
+\begin{document}
+\fancyhead[L]{\includegraphics[scale=0.15]{ucr}}
+\fancyhead[C]{UNIVERSIDAD DE COSTA RICA\\ESCUELA DE INGENIERÍA ELECTRICA\\PROGRAMACIÓN BAJO PLATAFORMAS ABIERTAS\\PROYECTO DE DESARROLLO - BOLETIN.02}
+\fancyhead[R]{\includegraphics[scale=0.4]{eie}}
+\pagestyle{fancy}
+\setlength{\headheight}{30pt}
+\rule{\linewidth}{0.2mm}
+\vspace{10pt}
+
+\paragraph{Primer comunicado:}
+Por favor usen el git de la escuela, lo que podemos hacer es tener
+las cosas pesadas (que está en /extra/pdf) lo usemos en gitHUb y la del programa en si y eso en el git de la escuela. Esto por que hablando con el profe el quiere que usemos el de la escuela. Le comunique que teníamos problemas y di me dijo "eso es parte de lo que quiero que experimenten".. entonces.. a arreglar el git, A mi ya me funciona entonces ahí traten de arreglarlo, si no ahí vemos.
+
+\paragraph{Segundo comunicado:}
+Ya masomenos sabemos que hace cada uno. Lo pondré en la siguiente nota
+\begin{itemize}
+\item Luis Diego: va a ordenar la tabla por medio de regular expressions, esto para automatizar la cosa. Como creo que lo va hacer en python o pear, que suba al git el scrip documentado para que todo entendamos.\\
+\begin{shaded}
+\begin{center}
+	TABLA 1: Estudiantes\\
+    \begin{tabular}{ | l | l |}
+    \hline
+    id & carné \\ \hline
+    AUTO-INCREMENT & XXXXXX   \\
+    \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+	TABLA 2: Materias\\
+    \begin{tabular}{ | l | l |}
+    \hline
+    id & sigla \\ \hline
+    AUTO-INCREMENT & XXXXXX \\ 
+    \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+	TABLA 3: GENERAL\\
+    \begin{tabular}{ | l | l || l | l | l | l | l |}
+    \hline
+    carné & recinto & año & periodo & grupo & sigla & nota \\ \hline
+    LINK-TO-1ST-TABLE & XX & XXXX & X & XXX & LINK-TO-2ND-TABLE  & X.X \\
+    \hline
+    \end{tabular}
+\end{center}
+\textit{nota: vean que las dos primera tablas tienen un id (eso es el primary key, si no lo han escuchado en cualquier libro de bases de datos debe salir) y con ese número interconectan las tablas)}
+\end{shaded}
+\item Sebastian: se dedicará a hacer los queries a las tablas por medio de php (ya masomenos viendo las tablas de arriba va viendo como van a estan configuradas las tablas (en el boletin sale como hacer las tablas (o bajese phpmyadmin, es más fácil) , puede hacer 3 de prueba que cumplan con las tablas de arriba y mandarse a hacer los filtros
+\item Carla: no se si vos querés darle con php o bien dedicarte a lo de hacer el reporte, (no se como estará sebas con lo de él) pero almenos lo del reporte di hay q ver como se hacen los histográmas como se pasan a un .tex y así, que a eo me pienso a dedicar. Aun no se ni papa de hacer gráficos y eso. =P
+\end{itemize}
+\end{document}
